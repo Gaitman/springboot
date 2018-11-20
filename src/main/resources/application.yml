@@ -182,31 +182,33 @@ j2cache:
 
 ---
 
-#开发环境
+#开发环境配置
+# .yml类型文件，属性名后面冒号和值之间必须有一个空格
 spring:
   profiles: dev
   datasource:
-      name : geekcattle
+      name : dxy   # 数据库的昵称，随便取一个
       username  : root
-      password  : root
-      url : jdbc:mysql://localhost:3306/geekcattle?useUnicode=true&characterEncoding=UTF-8
+      password  :
+      url : jdbc:mysql://localhost:3306/af?useUnicode=true&characterEncoding=UTF-8
+#      url : jdbc:mysql://localhost:3306/geekcattle?useUnicode=true&characterEncoding=UTF-8
   redis:
-    database : 0
+    database : 0   # 枚举值：0~15
     host : 127.0.0.1
     port : 6379
-    password : Hao123
+    password :
 server:
-  port: 8000
+  port: 8000   # 页面的启动端口
 j2cache:
     config-location: classpath:j2cache-dev.properties
 
 ---
 
-#测试环境
+#测试环境配置
 spring:
   profiles: pro
   datasource:
-      name : geekcattle
+      name : af
       username  : geekcattle
       password  : GeekCattle
       url : jdbc:mysql://localhost:3306/geekcattle?useUnicode=true&characterEncoding=UTF-8
